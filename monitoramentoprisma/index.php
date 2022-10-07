@@ -1,12 +1,4 @@
-﻿  <?php
-
-include ("conexao.php");
-
-
-
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt" dir="ltr"  encode="utf-8">
   <head>
     <meta charset="utf-8">
