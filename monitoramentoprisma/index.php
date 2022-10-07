@@ -33,21 +33,17 @@ include ("conexao.php");
                        </thead>
                        <tbody>
                         <?php
-                          $con = mysqli_connect("localhost","root","","monitoramento");
-                          if (mysqli_connect_errno()) {
-                              printf("Connect failed: %s\n", mysqli_connect_error());
-                                exit();
-                              }
+                          $con = pg_connect("ec2-44-205-63-142.compute-1.amazonaws.com","ulqluuthboquug","c9c28a212c4e8cb9ee2f8c7b390e9f392e92164c1265b37301fc3246b8690f1a","d6f1kj4g4k81dh");
 
                           $query = "SELECT * FROM `clientes` where tecninco like 'Offline'";
                           
-                          $teste = mysqli_query($con,$query);
+                          $teste = pg_query($con,$query);
 
-                          $pedro = mysqli_fetch_assoc($teste);
+                          $pedro = pg_fetch_assoc($teste);
 
                           
 
-                          while ($dados = mysqli_fetch_assoc($teste)) 
+                          while ($dados = pg_fetch_assoc($teste)) 
                           {
                             echo"<tr>";
                             echo"<td>".$dados['cod']."</td>";
