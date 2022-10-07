@@ -33,7 +33,8 @@
 
                           $con = pg_connect("host= $servidor user=$usuario password=$senha dbname=$database");
                                if(!$con) { die("Não foi possível se conectar ao banco de dados."); }
-                          $query = "SELECT * FROM `clientes` where tecninco like 'Offline'";
+
+                          $query = "select * from clientes where tecninco like 'Offline'";
                           
                           $teste = pg_query($con,$query);
 
