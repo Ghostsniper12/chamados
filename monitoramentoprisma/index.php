@@ -25,8 +25,14 @@
                        </thead>
                        <tbody>
                         <?php
-                          $con = pg_connect("ec2-44-205-63-142.compute-1.amazonaws.com","ulqluuthboquug","c9c28a212c4e8cb9ee2f8c7b390e9f392e92164c1265b37301fc3246b8690f1a","d6f1kj4g4k81dh");
 
+                          $servidor ="ec2-44-205-63-142.compute-1.amazonaws.com";
+                          $usuario = "ulqluuthboquug";
+                          $senha ="c9c28a212c4e8cb9ee2f8c7b390e9f392e92164c1265b37301fc3246b8690f1a";
+                          $database ="d6f1kj4g4k81dh";
+
+                          $con = pg_connect("host= $servidor user=$usuario password=$senha dbname=$database");
+                               if(!$conexao) { die("Não foi possível se conectar ao banco de dados."); }
                           $query = "SELECT * FROM `clientes` where tecninco like 'Offline'";
                           
                           $teste = pg_query($con,$query);
